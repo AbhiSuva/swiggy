@@ -7,7 +7,6 @@ function Restaurantmenu() {
   const [menudata, setmenudata] = useState("");
 
   console.log(id);
-//  7D02-D5FF
   //   async function fetchmenu() {
   //     const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
   //     const SWIGGY_API =
