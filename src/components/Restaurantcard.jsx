@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Restaurantcard(iteam) {
     // console.log("ok")
-    console.log(iteam.link )
+    // console.log(iteam.link.split("/")[5])
   return (
     <Link to={`/restaurantMenu/${iteam.link.split("/")[5]}`}>
       <div className="relative min-w-[272px] h-[182px]">

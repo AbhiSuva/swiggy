@@ -8,8 +8,11 @@ function Body() {
   const [yourminddata, setyourminddata] = useState([]);
 
   async function fetchdata() {
+    // const swiggyUrl = encodeURIComponent(
+    //   "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.54083579&lng=77.33577989&carousel=true&third_party_vendor=1",
+    // );
     const swiggyUrl = encodeURIComponent(
-      "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.54083579&lng=77.33577989&carousel=true&third_party_vendor=1",
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9690247&lng=72.8205292&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
     const data = await fetch(`https://corsproxy.io/?url=${swiggyUrl}`);
     const result = await data.json();
@@ -30,7 +33,7 @@ function Body() {
       <div className="w-[80%] mx-auto mt-3 overflow-hidden">
         <YourMind data={yourminddata} />
         <TopRestaurant data={topRestaurantdata} />
-        <Onlinefood data={topRestaurantdata}/>
+        <Onlinefood data={topRestaurantdata} />
       </div>
     </div>
   );

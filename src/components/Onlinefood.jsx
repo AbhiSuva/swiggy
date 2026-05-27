@@ -3,7 +3,7 @@ import Restaurantcard from "./Restaurantcard";
 import { Link } from "react-router-dom";
 
 function Onlinefood({ data }) {
-    console.log()
+    // console.log()
   return (
     <div className="flex flex-col gap-14 mt-8">
 
@@ -16,7 +16,7 @@ function Onlinefood({ data }) {
       
       <div className="grid grid-cols-4 gap-8">
         {data.map((iteam) => (
-          <Link to={`/restaurantMenu/${iteam.info.id}`}>  
+          <Link to={`/restaurantMenu/${iteam.cta.link.split("/")[5]}`}>  
           <div className="hover:scale-95 duration-200">
             <div className="relative min-w-[280px] h-[240px]">
               <img
