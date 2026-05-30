@@ -6,6 +6,7 @@ import Onlinefood from "./Onlinefood";
 function Body() {
   const [topRestaurantdata, settopRestaurantdata] = useState([]);
   const [yourminddata, setyourminddata] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function fetchdata() {
     // const swiggyUrl = encodeURIComponent(
@@ -22,11 +23,39 @@ function Body() {
         ?.restaurants,
     );
     setyourminddata(result?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+    setLoading(false);
   }
 
   useEffect(() => {
     fetchdata();
   }, []);
+
+  if (loading)
+    return (
+      <div className="w-[800px] mx-auto py-6">
+        <div
+          className="skeleton"
+          style={{ height: 14, width: 220, marginBottom: 20 }}
+        ></div>
+
+        <div
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}
+        >
+          {[1, 2].map((i) => (
+            <div key={i}>
+              <div className="skeleton skeleton-img"></div>
+              <div className="skeleton skeleton-line1"></div>
+              <div className="skeleton skeleton-line2"></div>
+              <div className="skeleton skeleton-line3"></div>
+              <div className="skeleton-footer">
+                <div className="skeleton skeleton-btn"></div>
+                <div className="skeleton skeleton-btn"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
 
   return (
     <div className="w-full">

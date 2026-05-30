@@ -51,9 +51,9 @@ function Head() {
         <div className="flex items-center gap-16 font-semibold text-gray-800">
           
           {navIteam.map((data,i) => (
-            <div className="flex items-center gap-3" key={i}>
-              <i className={"text-xl fi fi-rr-"+ data.image}></i>
-              <p className="text-lg">{data.name}</p>
+            <div className="flex items-center gap-3 font-semibold" key={i}>
+              <i className={"text-[18px] fi fi-rr-"+ data.image}></i>
+              <p className="text-[16px]">{data.name}</p>
             </div>
           ))}
 
